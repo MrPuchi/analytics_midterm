@@ -1,6 +1,6 @@
 #Libraries
 install.packages(c('ggplot2','visreg','GGally','lmtest','plm',
-                   'car','psych','MuMIn','olsrr','stargazer','rgl','plotly','dplyr','caTools','boot'))
+                   'car','psych','MuMIn','olsrr','stargazer','rgl','plotly','dplyr','caTools','boot','caret'))
 library(ggplot2)
 library(visreg)
 library(GGally)
@@ -17,3 +17,4 @@ library(dplyr)
 library(caTools)
 library(boot)
 library(splines)
+library(caret)
