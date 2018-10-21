@@ -35,22 +35,21 @@ sort(apply(imdb.data[,col.NA], 2, function(cols) {sum(is.na(cols))/length(cols)}
 
     #We can eliminate one of the columns, we will go with budget and also plot_keywords (both greater than 1% of NAs)
     
-imdb.data.noNA = imdb.data[,-c(8,36)]
-rows.NA2 = which(apply(imdb.data.noNA, 1, getNA)==TRUE)   
-length(rows.NA2)/nrow(imdb.data.noNA) 
-
-medianImput <- preProcess(imdb.data.noNA, method='medianImpute') #predicting missing numerical variables using medianImpute
-
-imdb.data.noNA2 = predict(medianImput,imdb.data.noNA)
-rows.NA3 = which(apply(imdb.data.noNA2, 1, getNA)==TRUE)   
-length(rows.NA3)/nrow(imdb.data.noNA2)
-
-boxplot(imdb.data.noNA2$movie_budget)
-
-col.NA2 = which(apply(imdb.data.noNA2, 2, getNA)==TRUE)  # get which cols have at least one NA
-
-sort(apply(imdb.data.noNA2[,col.NA2], 2, function(cols) {sum(is.na(cols))/length(cols)}),decreasing = TRUE)#Calculate % of NAs per predictor
+  imdb.data.noNA = imdb.data[,-c(8,36)]
+  rows.NA2 = which(apply(imdb.data.noNA, 1, getNA)==TRUE)   
+  length(rows.NA2)/nrow(imdb.data.noNA) 
+  
+  medianImput <- preProcess(imdb.data.noNA, method='medianImpute') #predicting missing numerical variables using medianImpute
+  
+  imdb.data.noNA2 = predict(medianImput,imdb.data.noNA)
+  rows.NA3 = which(apply(imdb.data.noNA2, 1, getNA)==TRUE)   
+  length(rows.NA3)/nrow(imdb.data.noNA2)
+  boxplot(imdb.data.noNA2$movie_budget)
+  col.NA2 = which(apply(imdb.data.noNA2, 2, getNA)==TRUE)  # get which cols have at least one NA
+  sort(apply(imdb.data.noNA2[,col.NA2], 2, function(cols) {sum(is.na(cols))/length(cols)}),decreasing = TRUE)#Calculate % of NAs per predictor
 
 
+  imdb.data.cont = select_if(imdb.data.noNA2, is.numeric)
+  imdb.data.noNA3 = imdb.data.noNA2[-rows.NA3,] #This is the database without NAs
 
-imdb.data.cont = select_if(imdb.data, is.numeric)
+
