@@ -15,6 +15,9 @@ imdb.data$critic_reviews_number = as.numeric(imdb.data$critic_reviews_number)
 imdb.data$user_reviews_number = as.numeric(imdb.data$user_reviews_number)
 imdb.data$user_votes_number = as.numeric(imdb.data$user_votes_number)
 imdb.data$actor_3_facebook_likes = as.numeric(imdb.data$actor_3_facebook_likes)
+imdb.data$aspect_ratio = as.factor(imdb.data$aspect_ratio)
+
+unique(imdb.data$aspect_ratio)
 
 ## Identifying NAs in rows
 
