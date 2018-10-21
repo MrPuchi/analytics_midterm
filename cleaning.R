@@ -14,6 +14,7 @@ imdb.data$actor_3_star_meter = as.numeric(imdb.data$actor_3_star_meter)
 imdb.data$critic_reviews_number = as.numeric(imdb.data$critic_reviews_number)
 imdb.data$user_reviews_number = as.numeric(imdb.data$user_reviews_number)
 imdb.data$user_votes_number = as.numeric(imdb.data$user_votes_number)
+imdb.data$actor_3_facebook_likes = as.numeric(imdb.data$actor_3_facebook_likes)
 
 ## Identifying NAs in rows
 
@@ -49,7 +50,7 @@ sort(apply(imdb.data[,col.NA], 2, function(cols) {sum(is.na(cols))/length(cols)}
   sort(apply(imdb.data.noNA2[,col.NA2], 2, function(cols) {sum(is.na(cols))/length(cols)}),decreasing = TRUE)#Calculate % of NAs per predictor
 
 
-  imdb.data.cont = select_if(imdb.data.noNA3, is.numeric)
+
   imdb.data.noNA3 = imdb.data.noNA2[-rows.NA3,] #This is the database without NAs
 
   names(imdb.data.noNA3)
