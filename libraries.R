@@ -18,3 +18,8 @@ library(caTools)
 library(boot)
 library(splines)
 library(caret)
+library(tidyr)
+library(splitstackshape)
+library(reshape)
+
+install.packages('splitstackshape')
