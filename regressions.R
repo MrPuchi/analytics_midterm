@@ -31,8 +31,9 @@ split.df4 = split.df3[,-2]
 
 split.df5 = dcast(split.df4,movie_id~value)
 
-imdb.data.noNA4 = imdb.data.noNA3[]
-names()
+imdb.data.noNA4 = imdb.data.noNA3[,-c(31,38:50)]
+names(imdb.data.noNA3)
 
-
-  
+names(imdb.data.noNA4)
+imdb.data.noNA.genres = merge(imdb.data.noNA4,split.df5,by = 'movie_id')
+names(imdb.data.noNA.genres)
