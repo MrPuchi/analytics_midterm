@@ -20,6 +20,6 @@ library(splines)
 library(caret)
 library(tidyr)
 library(splitstackshape)
-library(reshape)
+library(reshape2)
 
 install.packages('splitstackshape')
