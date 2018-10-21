@@ -49,7 +49,7 @@ sort(apply(imdb.data[,col.NA], 2, function(cols) {sum(is.na(cols))/length(cols)}
   sort(apply(imdb.data.noNA2[,col.NA2], 2, function(cols) {sum(is.na(cols))/length(cols)}),decreasing = TRUE)#Calculate % of NAs per predictor
 
 
-  imdb.data.cont = select_if(imdb.data.noNA2, is.numeric)
+  imdb.data.cont = select_if(imdb.data.noNA3, is.numeric)
   imdb.data.noNA3 = imdb.data.noNA2[-rows.NA3,] #This is the database without NAs
 
-
+  names(imdb.data.noNA3)
