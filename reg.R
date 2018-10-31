@@ -49,29 +49,7 @@ ggcorr(imdb.data.noNA.genres)
 
 
 
-imdb.data.noNA.genres$actor_1_known_for
 
-imdb.data.noNA.genres$title
-
-reg.pure = lm(data = imdb.data.noNA.genres, formula = imdb_score~.)
-
-
-summary(reg.pure)
-
-residualPlots(reg1)
-
-outlierTest(reg1)
-
-release_day
-aspect_ratio
-actor_1_facebook_likes
-actor_1_star_meter
-actor_2_star_meter
-actor_3_star_meter
-critic_reviews_number
-user_votes_number
-user_reviews_number
-movie_meter_IMDB_pro
 
 imdb.data.cont.linear = imdb.data.cont[,c(1,2,5,8,9,11,13,14,15,18,23)]
 reg1.linear = lm(data = imdb.data.cont.linear, formula = imdb_score~.)
