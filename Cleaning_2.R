@@ -1,7 +1,3 @@
-#Modeling
-
-fit = lm(data=imdb.data.cont, imdb_score~.)
-summary(fit)
 
 
 # WE found movies with the same movie_id, here we are changing the id since it doesn't affect reggression
@@ -35,9 +31,8 @@ imdb.data.noNA4 = imdb.data.noNA3[,-c(31,38:50)] # We remove old genre columns a
 imdb.data.noNA.genres = merge(imdb.data.noNA4,split.df7,by = 'movie_id')
 names(imdb.data.noNA.genres)
 
-for(i in 44:67){
-  imdb.data.noNA.genres[,i]=as.factor(imdb.data.noNA.genres[,i])}
-str(imdb.data.noNA.genres)
+
+# str(imdb.data.noNA.genres)
 
 #getting numeric data
 imdb.data.cont = select_if(imdb.data.noNA.genres, is.numeric)
@@ -47,29 +42,7 @@ cor.matrix = cor(imdb.data.cont)
 
 ggcorr(imdb.data.noNA.genres)
 
+#########################################################################
 
 
 
-
-imdb.data.cont.linear = imdb.data.cont[,c(1,2,5,8,9,11,13,14,15,18,23)]
-reg1.linear = lm(data = imdb.data.cont.linear, formula = imdb_score~.)
-residualPlots(reg1.linear)                                       
-summary(reg1.linear)
-names(imdb.data.cont.linear)
-
-imdb.data.cont.linear2=imdb.data.cont.linear[,-c(4,11,10)]
-reg1.linear2=lm(imdb.data.cont.linear2, formula = imdb_score~.)
-residualPlots(reg1.linear2) 
-names(imdb.data.cont.linear2)
-
-imdb.data.cont.linear3=imdb.data.cont.linear2[,-7]
-reg1.linear3=lm(imdb.data.cont.linear3, formula = imdb_score~.)
-residualPlots(reg1.linear3) 
-
-summary(reg1.linear3)
-
-
-reg1.linear3=lm(imdb.data.cont.linear3, formula = imdb_score~.)
-residualPlots(reg1.linear3) 
-
-summary(reg1.linear3)

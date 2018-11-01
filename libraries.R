@@ -1,6 +1,6 @@
 #Libraries
 install.packages(c('ggplot2','visreg','GGally','lmtest','plm',
-                   'car','psych','MuMIn','olsrr','stargazer','rgl','plotly','dplyr','caTools','boot','caret'))
+                   'car','psych','MuMIn','olsrr','stargazer','rgl','plotly','dplyr','caTools','boot','caret','lubridate'))
 library(ggplot2)
 library(visreg)
 library(GGally)
@@ -21,5 +21,7 @@ library(caret)
 library(tidyr)
 library(splitstackshape)
 library(reshape2)
+
+library(lubridate)
 
 install.packages('splitstackshape')

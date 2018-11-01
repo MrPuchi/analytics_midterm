@@ -2,7 +2,7 @@
 
 
 #Cleaning Script
-imdb.data = read.csv('data_final.csv')
+imdb.data = read.csv('data_final_corrected.csv')
 str(imdb.data)
 names(imdb.data)
 imdb.data = imdb.data[,-c(60:71)] #removing X columns
@@ -16,9 +16,7 @@ imdb.data$user_reviews_number = as.numeric(imdb.data$user_reviews_number)
 imdb.data$user_votes_number = as.numeric(imdb.data$user_votes_number)
 imdb.data$actor_3_facebook_likes = as.numeric(imdb.data$actor_3_facebook_likes)
 imdb.data$aspect_ratio = as.factor(imdb.data$aspect_ratio)
-# imdb.data$release_year = as.factor(imdb.data$release_year)
-# imdb.data$release_month = as.factor(imdb.data$release_month)
-# imdb.data$release_day = as.factor(imdb.data$release_day)
+
 
 
 
